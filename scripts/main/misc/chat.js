@@ -1,3 +1,4 @@
+// Changelog: Now youadd nick with "nick:', teting new variables for chat!
 import { world, system } from "@minecraft/server";
 
 const messages = new Map();
@@ -77,6 +78,7 @@ export function chatrank(data) {
     }
   });
 }
+
 
 
 
