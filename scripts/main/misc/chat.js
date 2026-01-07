@@ -57,7 +57,7 @@ export function chatrank(data) {
     return;
   }
 
-  const formatted = `§f[${data.sender.nameTag}§r§f] §7${data.sender.nameTag}: §f${data.message}`;
+  const formatted = `<${join.ranks}> §f${data.message}`;
 
   // Broadcast formatted message
   world.sendMessage(formatted);
@@ -78,6 +78,7 @@ export function chatrank(data) {
     }
   });
 }
+
 
 
 
