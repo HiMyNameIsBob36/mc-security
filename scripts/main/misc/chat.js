@@ -94,3 +94,4 @@ const formatted = `${ranks.join(" ")} ${data.sender.nameTag}  §r§7${data.me
 
 
 
+
