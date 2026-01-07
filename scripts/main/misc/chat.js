@@ -34,17 +34,17 @@ export function chatrank(data) {
 
   // Get ranks from tags
   let ranks = tags
-    .filter((tag) => tag.startsWith("bamboo:"))
-    .map((tag) => tag.replace("bamboo:", ""));
+    .filter((tag) => tag.startsWith("rank:"))
+    .map((tag) => tag.replace("rank:", ""));
 
   if (!ranks.length) {
-    ranks = ["§l"];
+    ranks = ["§6Member"];
   }
 
   // Too fast?
   if (score >= CHAT_LIMIT) {
     data.cancel = true;
-    data.sender.sendMessage("§l§4🍀 Hey! You're sending messages too quickly!");
+    data.sender.sendMessage("§l§4Hey! You're sending messages too quickly!");
     return;
   }
 
@@ -52,15 +52,11 @@ export function chatrank(data) {
   const lastMessage = messages.get(data.sender.name);
   if (lastMessage === data.message) {
     data.cancel = true;
-    data.sender.sendMessage("§l§4🍀 Please do not spam chat!");
+    data.sender.sendMessage("§l§cPlease do not spam chat!");
     return;
   }
 
- // const formatted = `§f[${ranks.join("§r§f] [")}§r§f] §7${data.sender.nameTag} >> §f${data.message}`;
-
-// const formatted = `§8${data.sender.nameTag} ${ranks.join(" ")} §7${data.message}`;
-
-const formatted = `${ranks.join(" ")} ${data.sender.nameTag}  §r§7${data.message}`;
+  const formatted = `§f[${ranks.join("§r§f] [")}§r§f] §7${data.sender.nameTag}: §f${data.message}`;
 
   // Broadcast formatted message
   world.sendMessage(formatted);
@@ -81,17 +77,3 @@ const formatted = `${ranks.join(" ")} ${data.sender.nameTag}  §r§7${data.me
     }
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

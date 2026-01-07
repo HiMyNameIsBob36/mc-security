@@ -6,7 +6,7 @@ const CHAT_OBJECTIVE = "chatsSent";
 export function timer() {
   seconds++;
 
-  if (seconds >= 3) {
+  if (seconds >= 4) {
     try {
       const objective = world.scoreboard.getObjective(CHAT_OBJECTIVE);
       if (objective) {
@@ -24,4 +24,3 @@ export function timer() {
 
   return seconds;
 }
-
