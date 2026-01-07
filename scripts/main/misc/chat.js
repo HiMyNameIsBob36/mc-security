@@ -34,11 +34,11 @@ export function chatrank(data) {
 
   // Get ranks from tags
   let ranks = tags
-    .filter((tag) => tag.startsWith("rank:"))
-    .map((tag) => tag.replace("rank:", ""));
+    .filter((tag) => tag.startsWith("nick:"))
+    .map((tag) => tag.replace("nick:", ""));
 
   if (!ranks.length) {
-    ranks = ["{data.sender.nameTag}"];
+    ranks = [{data.sender.nameTag}];
   }
 
   // Too fast?
@@ -56,7 +56,7 @@ export function chatrank(data) {
     return;
   }
 
-  const formatted = `§f[${ranks.join("§r§f] [")}§r§f] §7${data.sender.nameTag}: §f${data.message}`;
+  const formatted = `§f[${data.sender.nameTag}§r§f] §7${data.sender.nameTag}: §f${data.message}`;
 
   // Broadcast formatted message
   world.sendMessage(formatted);
@@ -77,4 +77,5 @@ export function chatrank(data) {
     }
   });
 }
+
 
