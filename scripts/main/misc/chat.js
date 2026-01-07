@@ -38,7 +38,7 @@ export function chatrank(data) {
     .map((tag) => tag.replace("nick:", ""));
 
   if (!ranks.length) {
-    ranks = [{data.sender.nameTag}];
+    ranks = ["${data.sender.nameTag}"];
   }
 
   // Too fast?
@@ -77,5 +77,6 @@ export function chatrank(data) {
     }
   });
 }
+
 
 
